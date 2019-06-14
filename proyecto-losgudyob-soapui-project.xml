@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="0c96a110-aab0-495b-a5c1-66c2023044b4" activeEnvironment="Default" name="proyecto_losgudyob" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b7d869b0-f86a-44e9-914e-1d10eb206a1e" wsaVersion="NONE" name="LosGudYobEndpointImplServiceSoapBinding" type="wsdl" bindingName="{http://endpoint.view.losgudyob.proyecto.pe/}LosGudYobEndpointImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8082/services/LosGudYob?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8082/services/LosGudYob?wsdl"><con:part><con:url>http://localhost:8082/services/LosGudYob?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="LosGudYobEndpointImplService" targetNamespace="http://endpoint.view.losgudyob.proyecto.pe/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://endpoint.view.losgudyob.proyecto.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://endpoint.view.losgudyob.proyecto.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ClienteRegistroModelRequest" type="tns:clienteRegistroModelRequest"/>
+      <xs:element name="ClienteRegistroModelResponse" type="tns:clienteRegistroModelResponse"/>
+      <xs:element name="ClienteUpdateModelRequest" type="tns:clienteUpdateModelRequest"/>
+      <xs:element name="ClienteUpdateModelResponse" type="tns:clienteUpdateModelResponse"/>
+      <xs:element name="ServicioRegistroModelRequest" type="tns:servicioRegistroModelRequest"/>
+      <xs:element name="ServicioRegistroModelResponse" type="tns:servicioRegistroModelResponse"/>
+      <xs:element name="ServicioUpdateModelRequest" type="tns:servicioUpdateModelRequest"/>
+      <xs:element name="ServicioUpdateModelResponse" type="tns:servicioUpdateModelResponse"/>
+      <xs:element name="insertClient" type="tns:insertClient"/>
+      <xs:element name="insertClientResponse" type="tns:insertClientResponse"/>
+      <xs:element name="insertService" type="tns:insertService"/>
+      <xs:element name="insertServiceResponse" type="tns:insertServiceResponse"/>
+      <xs:element name="updateClient" type="tns:updateClient"/>
+      <xs:element name="updateClientResponse" type="tns:updateClientResponse"/>
+      <xs:element name="updateService" type="tns:updateService"/>
+      <xs:element name="updateServiceResponse" type="tns:updateServiceResponse"/>
+      <xs:complexType name="updateClient">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:clienteUpdateModelRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="clienteUpdateModelRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="celular" type="xs:string"/>
+          <xs:element minOccurs="0" name="correo" type="xs:string"/>
+          <xs:element minOccurs="0" name="clave" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateClientResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClienteUpdateModelResponse" type="tns:clienteUpdateModelResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="clienteUpdateModelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoRespuesta" type="xs:string"/>
+          <xs:element minOccurs="0" name="respuesta" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateService">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:servicioUpdateModelRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="servicioUpdateModelRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="tipo" type="xs:string"/>
+          <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+          <xs:element minOccurs="0" name="precio" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ServicioUpdateModelResponse" type="tns:servicioUpdateModelResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="servicioUpdateModelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoRespuesta" type="xs:string"/>
+          <xs:element minOccurs="0" name="respuesta" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertClient">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:clienteRegistroModelRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="clienteRegistroModelRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+          <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string"/>
+          <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string"/>
+          <xs:element minOccurs="0" name="dni" type="xs:string"/>
+          <xs:element minOccurs="0" name="celular" type="xs:string"/>
+          <xs:element minOccurs="0" name="correo" type="xs:string"/>
+          <xs:element minOccurs="0" name="fechaNacimiento" type="xs:string"/>
+          <xs:element minOccurs="0" name="clave" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertClientResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClienteRegistroModelResponse" type="tns:clienteRegistroModelResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="clienteRegistroModelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoRespuesta" type="xs:string"/>
+          <xs:element minOccurs="0" name="respuesta" type="xs:string"/>
+          <xs:element minOccurs="0" name="correo" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertService">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:servicioRegistroModelRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="servicioRegistroModelRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tipo" type="xs:string"/>
+          <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+          <xs:element minOccurs="0" name="precio" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ServicioRegistroModelResponse" type="tns:servicioRegistroModelResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="servicioRegistroModelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoRespuesta" type="xs:string"/>
+          <xs:element minOccurs="0" name="respuesta" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="updateClient">
+    <wsdl:part element="tns:updateClient" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateClientResponse">
+    <wsdl:part element="tns:updateClientResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateService">
+    <wsdl:part element="tns:updateService" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertClientResponse">
+    <wsdl:part element="tns:insertClientResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertServiceResponse">
+    <wsdl:part element="tns:insertServiceResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertClient">
+    <wsdl:part element="tns:insertClient" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertService">
+    <wsdl:part element="tns:insertService" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateServiceResponse">
+    <wsdl:part element="tns:updateServiceResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LosGudYobEndpoint">
+    <wsdl:operation name="updateClient">
+      <wsdl:input message="tns:updateClient" name="updateClient"></wsdl:input>
+      <wsdl:output message="tns:updateClientResponse" name="updateClientResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateService">
+      <wsdl:input message="tns:updateService" name="updateService"></wsdl:input>
+      <wsdl:output message="tns:updateServiceResponse" name="updateServiceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertClient">
+      <wsdl:input message="tns:insertClient" name="insertClient"></wsdl:input>
+      <wsdl:output message="tns:insertClientResponse" name="insertClientResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertService">
+      <wsdl:input message="tns:insertService" name="insertService"></wsdl:input>
+      <wsdl:output message="tns:insertServiceResponse" name="insertServiceResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LosGudYobEndpointImplServiceSoapBinding" type="tns:LosGudYobEndpoint">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="updateClient">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateClient">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateClientResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateService">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateService">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertClient">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insertClient">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertClientResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertService">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insertService">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LosGudYobEndpointImplService">
+    <wsdl:port binding="tns:LosGudYobEndpointImplServiceSoapBinding" name="LosGudYobEndpointImplPort">
+      <soap:address location="http://localhost:8082/services/LosGudYob"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8082/services/ClienteEndpoint</con:endpoint><con:endpoint>http://localhost:8082/services/LosGudYob</con:endpoint></con:endpoints><con:operation id="214b3696-f59f-4735-b859-4e90bfa4bf2b" isOneWay="false" action="" name="insertClient" bindingOperationName="insertClient" type="Request-Response" outputName="insertClientResponse" inputName="insertClient" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="539a05a1-1824-434f-ae5d-8146595add74" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/services/LosGudYob</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:end="http://endpoint.view.losgudyob.proyecto.pe/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <end:insertClient>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <nombre>Juan Carlos</nombre>\r
+            <!--Optional:-->\r
+            <apellidoPaterno>Castillo</apellidoPaterno>\r
+            <!--Optional:-->\r
+            <apellidoMaterno>Aycachi</apellidoMaterno>\r
+            <!--Optional:-->\r
+            <dni>40451917</dni>\r
+            <!--Optional:-->\r
+            <celular>979666355</celular>\r
+            <!--Optional:-->\r
+            <correo>c1rl5sjor7i25@hotmail.com</correo>\r
+            <!--Optional:-->\r
+            <fechaNacimiento>7-10-2000</fechaNacimiento>\r
+            <!--Optional:-->\r
+            <clave>clave123</clave>\r
+         </arg0>\r
+      </end:insertClient>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://endpoint.view.losgudyob.proyecto.pe/ClienteEndpoint/insertClient"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f414b657-7855-4958-8ac6-b9a20c49e7f6" isOneWay="false" action="" name="updateClient" bindingOperationName="updateClient" type="Request-Response" outputName="updateClientResponse" inputName="updateClient" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e4f26c80-b8db-460e-9d05-016700797754" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/services/LosGudYob</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:end="http://endpoint.view.losgudyob.proyecto.pe/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <end:updateClient>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <id>14</id>\r
+            <!--Optional:-->\r
+            <celular>987654321</celular>\r
+            <!--Optional:-->\r
+            <correo>mama@papa.edu.pe</correo>\r
+            <!--Optional:-->\r
+            <clave>147147</clave>\r
+         </arg0>\r
+      </end:updateClient>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://endpoint.view.losgudyob.proyecto.pe/ClienteEndpoint/updateClient"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0f7f69f1-26f3-4484-aff3-c0c48a5dd729" isOneWay="false" action="" name="insertService" bindingOperationName="insertService" type="Request-Response" outputName="insertServiceResponse" inputName="insertService" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f2c56c6a-08af-477d-88fa-123c5ac5ea98" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/services/LosGudYob</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:end="http://endpoint.view.losgudyob.proyecto.pe/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <end:insertService>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <tipo>Solo</tipo>\r
+            <!--Optional:-->\r
+            <descripcion>Internet 10mb</descripcion>\r
+            <!--Optional:-->\r
+            <precio>50.</precio>\r
+         </arg0>\r
+      </end:insertService>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://endpoint.view.losgudyob.proyecto.pe/LosGudYobEndpoint/insertService"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8e0e5fed-6437-4525-a8f3-400d3b7250f2" isOneWay="false" action="" name="updateService" bindingOperationName="updateService" type="Request-Response" outputName="updateServiceResponse" inputName="updateService" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ec907d19-b70f-4afa-8b65-e9084e37903f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/services/LosGudYob</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:end="http://endpoint.view.losgudyob.proyecto.pe/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <end:updateService>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <id>3</id>\r
+            <!--Optional:-->\r
+            <tipo>Solo</tipo>\r
+            <!--Optional:-->\r
+            <descripcion>5mb</descripcion>\r
+            <!--Optional:-->\r
+            <precio>precio</precio>\r
+         </arg0>\r
+      </end:updateService>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://endpoint.view.losgudyob.proyecto.pe/LosGudYobEndpoint/updateService"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
