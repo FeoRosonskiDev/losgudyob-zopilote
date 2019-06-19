@@ -13,6 +13,8 @@ import pe.proyecto.losgudyob.view.model.ServicioRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.ServicioRegistroModelResponse;
 import pe.proyecto.losgudyob.view.model.ServicioUpdateModelRequest;
 import pe.proyecto.losgudyob.view.model.ServicioUpdateModelResponse;
+import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelRequest;
+import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelResponse;
 
 @Component
 public class LosGudYobEndpointImpl implements LosGudYobEndpoint {
@@ -41,6 +43,11 @@ public class LosGudYobEndpointImpl implements LosGudYobEndpoint {
 	@Override
 	public ServicioUpdateModelResponse updateService(ServicioUpdateModelRequest request) {
 		return servicioService.updateService(request);
+	}
+
+	@Override
+	public SolicitudRegistroModelResponse insertSolicitud(SolicitudRegistroModelRequest request) {
+		return clienteService.insertSolicitud(request);
 	}
 
 }

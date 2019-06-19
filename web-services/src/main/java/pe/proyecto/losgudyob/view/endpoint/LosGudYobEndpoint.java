@@ -12,6 +12,8 @@ import pe.proyecto.losgudyob.view.model.ServicioRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.ServicioRegistroModelResponse;
 import pe.proyecto.losgudyob.view.model.ServicioUpdateModelRequest;
 import pe.proyecto.losgudyob.view.model.ServicioUpdateModelResponse;
+import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelRequest;
+import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelResponse;
 
 @WebService(serviceName = "LosGudYobEndpoint")
 public interface LosGudYobEndpoint {
@@ -31,4 +33,8 @@ public interface LosGudYobEndpoint {
 	@WebMethod()
 	@WebResult(name = "ServicioUpdateModelResponse")
 	public ServicioUpdateModelResponse updateService(ServicioUpdateModelRequest request);
+	
+	@WebMethod()
+	@WebResult(name = "SolicitudRegistroModelResponse")
+	public SolicitudRegistroModelResponse insertSolicitud(SolicitudRegistroModelRequest request);
 }

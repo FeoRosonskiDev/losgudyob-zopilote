@@ -9,6 +9,8 @@ import pe.proyecto.losgudyob.view.model.ClienteRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.ClienteRegistroModelResponse;
 import pe.proyecto.losgudyob.view.model.ClienteUpdateModelRequest;
 import pe.proyecto.losgudyob.view.model.ClienteUpdateModelResponse;
+import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelRequest;
+import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelResponse;
 
 public class ClienteServiceImplTest extends BaseTest {
 
@@ -43,6 +45,21 @@ public class ClienteServiceImplTest extends BaseTest {
 		
 		ClienteUpdateModelResponse response = clienteService.updateClient(request);
 		System.out.println("Response update : " + gson.toJson(response));
+	}
+	
+	// métodos de la solicitud
+	
+	@Test
+	public void insertServiceTest()
+	{
+		SolicitudRegistroModelRequest request = new SolicitudRegistroModelRequest();
+		request.setIdCliente(1);
+		request.setIdServicio(1);
+		request.setIdDistrito(1);
+		request.setDireccion("Av. Arequipa #1835");
+		
+		SolicitudRegistroModelResponse response = clienteService.insertSolicitud(request);
+		System.out.println("Response solicitud registro : " + gson.toJson(response));
 	}
 	
 }

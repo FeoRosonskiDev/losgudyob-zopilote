@@ -77,4 +77,11 @@ public class ClienteRepositoryTest extends BaseTest{
 		Integer afectedRows = clienteRepository.updateClient(cliente);
 		System.out.println("Filas afectadas : " + afectedRows);
 	}
+	
+	@Test
+	public void findActiveClientByIdTest()
+	{
+		cliente = clienteRepository.findActiveClientById(1);
+		System.out.println("Cliente : " + gson.toJson(cliente));
+	}
 }

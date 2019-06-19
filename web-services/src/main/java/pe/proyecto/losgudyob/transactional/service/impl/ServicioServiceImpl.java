@@ -90,7 +90,7 @@ public class ServicioServiceImpl implements ServicioService {
 		
 		// database validations start //
 		
-		Servicio servicio = servicioRepository.findById(request.getId());
+		Servicio servicio = servicioRepository.findActiveServicesById(request.getId());
 		if(servicio == null)
 			return notValidUpdateResponse("El servicio que quiere modificar no existe");
 		

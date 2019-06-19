@@ -18,7 +18,7 @@ public interface ServicioRepository {
 	@Update("update servicios set tipo = #{tipo}, descripcion = #{descripcion}, precio = #{precio} where id = #{id}")
 	public Integer updateService(Servicio servicio);
 	
-	@Select("select * from servicios where id = #{id}")
+	@Select("select * from servicios where id = #{id} and estado = 1")
 	@Results( value = {
 			@Result(column = "id", 			property = "id"),
 			@Result(column = "tipo", 		property = "tipo"),
@@ -26,6 +26,13 @@ public interface ServicioRepository {
 			@Result(column = "precio", 		property = "precio"),	
 			@Result(column = "estado", 		property = "estado")		
 	})
-	public Servicio findById(Integer id);
+	public Servicio findActiveServicesById(Integer id);
+	
+	
+	@Select("select descripcion from servicios where id = #{id}")
+	@Results( value = {
+			@Result(column = "descripcion", property = "descripcion")	
+	})
+	public String getServiceDescriptionById(Integer id);
 	
 }

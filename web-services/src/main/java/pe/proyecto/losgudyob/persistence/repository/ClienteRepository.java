@@ -67,4 +67,19 @@ public interface ClienteRepository {
 			@Result(column = "estado", 				property = "estado")
 	})
 	public Cliente findByCorreo(String correo);
+	
+	@Select("select * from clientes where id = #{id} and estado = 1")
+	@Results( value = {
+			@Result(column = "id", 					property = "id"),
+			@Result(column = "nombre", 				property = "nombre"),
+			@Result(column = "apellido_paterno", 	property = "apellidoPaterno"),
+			@Result(column = "apellido_materno", 	property = "apellidoMaterno"),
+			@Result(column = "dni", 				property = "dni"),
+			@Result(column = "celular", 			property = "celular"),
+			@Result(column = "correo", 				property = "correo"),
+			@Result(column = "fecha_nacimiento", 	property = "fechaNacimiento"),
+			@Result(column = "clave", 				property = "clave"),
+			@Result(column = "estado", 				property = "estado")
+	})
+	public Cliente findActiveClientById(Integer id);
 }

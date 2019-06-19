@@ -40,10 +40,17 @@ public class ServicioRepositoryTest extends BaseTest {
 	}
 	
 	@Test
-	public void findByIdTest() 
+	public void findActiveServicesByIdTest() 
 	{
-		servicio = servicioRepository.findById(1);
+		servicio = servicioRepository.findActiveServicesById(1);
 		System.out.println("Servicio encontrado : " + gson.toJson(servicio));
+	}
+	
+	@Test
+	public void getServiceDescriptionByIdTest()
+	{
+		String description = servicioRepository.getServiceDescriptionById(1);
+		System.out.println("Descripción del servicio : " + description);
 	}
 	
 }

@@ -10,12 +10,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import pe.proyecto.losgudyob.persistence.domain.Cliente;
+import pe.proyecto.losgudyob.persistence.domain.Solicitud;
 import pe.proyecto.losgudyob.persistence.repository.ClienteRepository;
+import pe.proyecto.losgudyob.persistence.repository.DistritoRepository;
+import pe.proyecto.losgudyob.persistence.repository.ServicioRepository;
+import pe.proyecto.losgudyob.persistence.repository.SolicitudRepository;
 import pe.proyecto.losgudyob.transactional.service.ClienteService;
 import pe.proyecto.losgudyob.view.model.ClienteRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.ClienteRegistroModelResponse;
 import pe.proyecto.losgudyob.view.model.ClienteUpdateModelRequest;
 import pe.proyecto.losgudyob.view.model.ClienteUpdateModelResponse;
+import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelRequest;
+import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelResponse;
 
 @Service("clienteService")
 @Transactional
@@ -23,6 +29,15 @@ public class ClienteServiceImpl implements ClienteService {
 	
 	@Autowired
 	private ClienteRepository clienteRepository;
+	
+	@Autowired
+	private SolicitudRepository solicitudRepository;
+	
+	@Autowired
+	private ServicioRepository servicioRepository;
+	
+	@Autowired
+	private DistritoRepository distritoRepository;
 
 	@Override
 	public ClienteRegistroModelResponse insertClient(ClienteRegistroModelRequest request) {
@@ -209,6 +224,63 @@ public class ClienteServiceImpl implements ClienteService {
 	
 	private ClienteUpdateModelResponse notValidUpdateResponse(String respuesta) {
 		ClienteUpdateModelResponse response = new ClienteUpdateModelResponse();
+		response.setCodigoRespuesta("01");
+		response.setRespuesta(respuesta);
+		return response;
+	}
+
+	// métodos de la solicitud
+
+	@Override
+	public SolicitudRegistroModelResponse insertSolicitud(SolicitudRegistroModelRequest request) {
+
+		// database validations start //
+		
+		if(clienteRepository.findActiveClientById(request.getIdCliente()) == null)
+			return notValidSolicitudRegistroResponse("Este cliente no existe");
+		
+		if(servicioRepository.findActiveServicesById(request.getIdServicio()) == null)
+			return notValidSolicitudRegistroResponse("Este servicio no se encuentra disponible");
+		
+		if(distritoRepository.findDistritoById(request.getIdDistrito()) == null)
+			return notValidSolicitudRegistroResponse("Este distrito no existe");
+		
+		// database validations end //
+		
+		// simple validations start //
+		
+		if(request.getDireccion().trim().equals(""))
+			return notValidSolicitudRegistroResponse("La dirección es obligatoria");
+		
+		if(request.getDireccion().trim().length() > 100)
+			return notValidSolicitudRegistroResponse("La dirección no debe contener más de 100 caracteres");
+		
+		// simple validations end //
+		
+		Solicitud solicitud = new Solicitud();
+		solicitud.setIdCliente(request.getIdCliente());
+		solicitud.setIdServicio(request.getIdServicio());
+		solicitud.setIdDistrito(request.getIdDistrito());
+		solicitud.setDireccion(request.getDireccion());
+		
+		DateFormat dateToString = new SimpleDateFormat("yyyy/MM/dd");
+		
+		solicitud.setFechaSolicitado(dateToString.format(new Date()));
+		solicitud.setEstado(1);
+		
+		solicitudRepository.insert(solicitud);
+		
+		SolicitudRegistroModelResponse response = new SolicitudRegistroModelResponse();
+		response.setCodigoRespuesta("00");
+		response.setRespuesta("OK");
+		response.setDescripcionServicio(servicioRepository.getServiceDescriptionById(request.getIdServicio()));
+		
+		return response;
+	}
+	
+	private SolicitudRegistroModelResponse notValidSolicitudRegistroResponse(String respuesta)
+	{
+		SolicitudRegistroModelResponse response = new SolicitudRegistroModelResponse();
 		response.setCodigoRespuesta("01");
 		response.setRespuesta(respuesta);
 		return response;
