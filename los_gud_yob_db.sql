@@ -70,8 +70,11 @@ CREATE TABLE solicitud (
 insert into clientes values (null, 'Juan Carlos', 'Castillo', 'Aycachi', '70555913', '979666355', 'carlosjordi@hotmail.com', '1993/04/01', 'clave123', 1);
 insert into servicios values (null, 'Duo', '20MB + telefono ilimitado', 89, 1);
 insert into distritos values (null, 'San Martin de Porres');
+insert into cargos values (null, 'Operador');
+insert into personal values (null, 'Sandra Paola', 'Castillo', 'Aycachi', '80666319', '989555422', 'sandrita@gmail.com.pe', '2005/06/30', 'clave321', 1, 1, 1);
 
 select * from clientes;
 select * from servicios;
 select * from distritos;
 select * from solicitud;
+select * from personal;

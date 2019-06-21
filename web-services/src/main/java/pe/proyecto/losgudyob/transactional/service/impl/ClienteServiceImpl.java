@@ -20,6 +20,8 @@ import pe.proyecto.losgudyob.view.model.ClienteRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.ClienteRegistroModelResponse;
 import pe.proyecto.losgudyob.view.model.ClienteUpdateModelRequest;
 import pe.proyecto.losgudyob.view.model.ClienteUpdateModelResponse;
+import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelRequest;
+import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelResponse;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelResponse;
 
@@ -281,6 +283,28 @@ public class ClienteServiceImpl implements ClienteService {
 	private SolicitudRegistroModelResponse notValidSolicitudRegistroResponse(String respuesta)
 	{
 		SolicitudRegistroModelResponse response = new SolicitudRegistroModelResponse();
+		response.setCodigoRespuesta("01");
+		response.setRespuesta(respuesta);
+		return response;
+	}
+
+
+	@Override
+	public SolicitudAsignarTecnicoModelResponse asignarTecnico(SolicitudAsignarTecnicoModelRequest request) {
+		
+		// db validations start //
+		
+		if(solicitudRepository.solicitudEnEspera(request.getIdSolicitud()) == null)
+			return notValidAsignarTecnicoResponse("Solicitud ya atendida o no existe");
+		
+		// db validations end //
+		
+		return null;
+	}
+	
+	private SolicitudAsignarTecnicoModelResponse notValidAsignarTecnicoResponse(String respuesta)
+	{
+		SolicitudAsignarTecnicoModelResponse response = new SolicitudAsignarTecnicoModelResponse();
 		response.setCodigoRespuesta("01");
 		response.setRespuesta(respuesta);
 		return response;

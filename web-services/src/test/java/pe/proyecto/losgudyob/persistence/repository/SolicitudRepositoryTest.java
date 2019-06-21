@@ -26,4 +26,25 @@ public class SolicitudRepositoryTest extends BaseTest{
 		System.out.println("Id de la nueva solicitud : " + solicitud.getId());
 	}
 	
+	@Test
+	public void setTechnicianTest()
+	{
+		Solicitud solicitud = new Solicitud();
+		solicitud.setFechaContactado("2019/06/21");
+		solicitud.setFechaAsignada("2019/06/28");
+		solicitud.setIdPersonal(1);
+		solicitud.setEstado(3); // 3 : contratado
+		solicitud.setId(1);
+		
+		Integer afectedRows = solicitudRepository.setTechnician(solicitud);
+		System.out.println("Filas afectadas : " + afectedRows);
+	}
+	
+	@Test
+	public void solicitudEnEsperaTest() 
+	{
+		Integer valid = solicitudRepository.solicitudEnEspera(1);
+		System.out.println("Solicitud valida ? " + valid);
+	}
+	
 }
