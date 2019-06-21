@@ -74,6 +74,7 @@ insert into cargos values (null, 'Operador');
 insert into cargos values (null, 'Administrador');
 insert into cargos values (null, 'Tecnico');
 insert into personal values (null, 'Sandra Paola', 'Castillo', 'Aycachi', '80666319', '989555422', 'sandrita@gmail.com.pe', '2005/06/30', 'clave321', 1, 1, 1);
+insert into personal values (null, 'Alejandra', 'Hallasi', 'Montesinos', '90505041', '951623847', 'alejandra@yahoo.es', '1997/04/10', 'clave231', 3, 1, 1);
 
 select * from clientes;
 select * from servicios;
