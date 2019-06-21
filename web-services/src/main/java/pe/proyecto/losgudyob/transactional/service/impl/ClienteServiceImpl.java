@@ -319,10 +319,12 @@ public class ClienteServiceImpl implements ClienteService {
 		solicitud.setFechaAsignada(request.getFechaAsignada());
 		
 		Date today = new Date();
-		DateFormat dateToString = new SimpleDateFormat("yyyy-MM-dd");
+		DateFormat dateToString = new SimpleDateFormat("yyyy/MM/dd");
 		
 		solicitud.setFechaContactado(dateToString.format(today));
 		solicitud.setEstado(3);
+		
+		solicitudRepository.setTechnician(solicitud);
 		
 		SolicitudAsignarTecnicoModelResponse response = new SolicitudAsignarTecnicoModelResponse();
 		response.setCodigoRespuesta("00");

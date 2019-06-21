@@ -9,6 +9,8 @@ import pe.proyecto.losgudyob.view.model.ClienteRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.ClienteRegistroModelResponse;
 import pe.proyecto.losgudyob.view.model.ClienteUpdateModelRequest;
 import pe.proyecto.losgudyob.view.model.ClienteUpdateModelResponse;
+import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelRequest;
+import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelResponse;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelResponse;
 
@@ -18,7 +20,7 @@ public class ClienteServiceImplTest extends BaseTest {
 	public ClienteService clienteService;
 	
 	@Test
-	public void insertClient() 
+	public void insertClientTest() 
 	{
 		ClienteRegistroModelRequest request = new ClienteRegistroModelRequest();
 		request.setNombre("Juan Carlos");
@@ -35,7 +37,7 @@ public class ClienteServiceImplTest extends BaseTest {
 	}
 	
 	@Test
-	public void updateClient()
+	public void updateClientTest()
 	{
 		ClienteUpdateModelRequest request = new ClienteUpdateModelRequest();
 		request.setCelular("999999999");
@@ -50,7 +52,7 @@ public class ClienteServiceImplTest extends BaseTest {
 	// métodos de la solicitud
 	
 	@Test
-	public void insertServiceTest()
+	public void insertSolicitudTest()
 	{
 		SolicitudRegistroModelRequest request = new SolicitudRegistroModelRequest();
 		request.setIdCliente(1);
@@ -60,6 +62,18 @@ public class ClienteServiceImplTest extends BaseTest {
 		
 		SolicitudRegistroModelResponse response = clienteService.insertSolicitud(request);
 		System.out.println("Response solicitud registro : " + gson.toJson(response));
+	}
+	
+	@Test
+	public void asignarTecnicoTest()
+	{
+		SolicitudAsignarTecnicoModelRequest request = new SolicitudAsignarTecnicoModelRequest();
+		request.setIdSolicitud(2);
+		request.setIdPersonal(2);
+		request.setFechaAsignada("2019/06/30");
+		
+		SolicitudAsignarTecnicoModelResponse response = clienteService.asignarTecnico(request);
+		System.out.println("Response asignar tecnico : " + gson.toJson(response));
 	}
 	
 }
