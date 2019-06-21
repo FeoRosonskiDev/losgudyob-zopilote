@@ -11,4 +11,7 @@ public interface PersonalRepository {
 			@Result(column = "id", property = "id")
 	})
 	public Integer activePersonal(Integer id);
+	
+	@Select("select id_cargo from personal where id = #{id}") // id_cargo 3 : tecnico
+	public Integer isTechnician(Integer id);
 }

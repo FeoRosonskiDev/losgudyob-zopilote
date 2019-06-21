@@ -13,7 +13,15 @@ public class PersonalRepositoryTest extends BaseTest{
 	@Test
 	public void activePersonalTest()
 	{
-		Integer active = personalRepository.activePersonal(2);
+		Integer active = personalRepository.activePersonal(1);
 		System.out.println("Personal activo ? " + active);
+	}
+	
+	@Test
+	public void isTehnicianTest()
+	{
+		Integer cargo = personalRepository.isTechnician(1);
+		if (cargo == 3)
+			System.out.println("Tecnico ? claro que yes ");
 	}
 }

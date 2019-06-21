@@ -13,6 +13,7 @@ import pe.proyecto.losgudyob.persistence.domain.Cliente;
 import pe.proyecto.losgudyob.persistence.domain.Solicitud;
 import pe.proyecto.losgudyob.persistence.repository.ClienteRepository;
 import pe.proyecto.losgudyob.persistence.repository.DistritoRepository;
+import pe.proyecto.losgudyob.persistence.repository.PersonalRepository;
 import pe.proyecto.losgudyob.persistence.repository.ServicioRepository;
 import pe.proyecto.losgudyob.persistence.repository.SolicitudRepository;
 import pe.proyecto.losgudyob.transactional.service.ClienteService;
@@ -40,6 +41,9 @@ public class ClienteServiceImpl implements ClienteService {
 	
 	@Autowired
 	private DistritoRepository distritoRepository;
+	
+	@Autowired
+	private PersonalRepository personalRepository;
 
 	@Override
 	public ClienteRegistroModelResponse insertClient(ClienteRegistroModelRequest request) {
@@ -297,9 +301,34 @@ public class ClienteServiceImpl implements ClienteService {
 		if(solicitudRepository.solicitudEnEspera(request.getIdSolicitud()) == null)
 			return notValidAsignarTecnicoResponse("Solicitud ya atendida o no existe");
 		
+		if(personalRepository.activePersonal(request.getIdPersonal()) == null)
+			return notValidAsignarTecnicoResponse("Este empleado no existe o no se encuentra activo");
+		
+		if(personalRepository.isTechnician(request.getIdPersonal()) != 3)
+			return notValidAsignarTecnicoResponse("Este empleado no es un técnico");
+		
 		// db validations end //
 		
-		return null;
+		// TODO: validar fecha asignada
+		
+		// asignando técnico //
+		
+		Solicitud solicitud = new Solicitud();
+		solicitud.setId(request.getIdSolicitud());
+		solicitud.setIdPersonal(request.getIdPersonal());
+		solicitud.setFechaAsignada(request.getFechaAsignada());
+		
+		Date today = new Date();
+		DateFormat dateToString = new SimpleDateFormat("yyyy-MM-dd");
+		
+		solicitud.setFechaContactado(dateToString.format(today));
+		solicitud.setEstado(3);
+		
+		SolicitudAsignarTecnicoModelResponse response = new SolicitudAsignarTecnicoModelResponse();
+		response.setCodigoRespuesta("00");
+		response.setRespuesta("OK");
+		
+		return response;
 	}
 	
 	private SolicitudAsignarTecnicoModelResponse notValidAsignarTecnicoResponse(String respuesta)
