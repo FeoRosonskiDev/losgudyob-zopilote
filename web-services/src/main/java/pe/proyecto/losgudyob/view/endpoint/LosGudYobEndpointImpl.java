@@ -13,6 +13,8 @@ import pe.proyecto.losgudyob.view.model.ServicioRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.ServicioRegistroModelResponse;
 import pe.proyecto.losgudyob.view.model.ServicioUpdateModelRequest;
 import pe.proyecto.losgudyob.view.model.ServicioUpdateModelResponse;
+import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelRequest;
+import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelResponse;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelResponse;
 
@@ -48,6 +50,11 @@ public class LosGudYobEndpointImpl implements LosGudYobEndpoint {
 	@Override
 	public SolicitudRegistroModelResponse insertSolicitud(SolicitudRegistroModelRequest request) {
 		return clienteService.insertSolicitud(request);
+	}
+
+	@Override
+	public SolicitudAsignarTecnicoModelResponse asignarTecnico(SolicitudAsignarTecnicoModelRequest request) {
+		return clienteService.asignarTecnico(request);
 	}
 
 }
