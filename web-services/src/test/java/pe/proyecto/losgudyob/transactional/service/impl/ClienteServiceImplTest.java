@@ -18,10 +18,9 @@ public class ClienteServiceImplTest extends BaseTest {
 
 	@Autowired
 	public ClienteService clienteService;
-	
+
 	@Test
-	public void insertClientTest() 
-	{
+	public void insertClientTest() {
 		ClienteRegistroModelRequest request = new ClienteRegistroModelRequest();
 		request.setNombre("Juan Carlos");
 		request.setApellidoPaterno("Trivino");
@@ -31,49 +30,46 @@ public class ClienteServiceImplTest extends BaseTest {
 		request.setCorreo("carlosjordi02@hotmail.com");
 		request.setFechaNacimiento("01/04/1993");
 		request.setClave("entodoelcachi");
-		
+
 		ClienteRegistroModelResponse response = clienteService.insertClient(request);
 		System.out.println("Response insert : " + gson.toJson(response));
 	}
-	
+
 	@Test
-	public void updateClientTest()
-	{
+	public void updateClientTest() {
 		ClienteUpdateModelRequest request = new ClienteUpdateModelRequest();
 		request.setCelular("999999999");
 		request.setCorreo("eltorito@carlitos.com.pe");
 		request.setClave("sinvaselina");
 		request.setId(5);
-		
+
 		ClienteUpdateModelResponse response = clienteService.updateClient(request);
 		System.out.println("Response update : " + gson.toJson(response));
 	}
-	
+
 	// métodos de la solicitud
-	
+
 	@Test
-	public void insertSolicitudTest()
-	{
+	public void insertSolicitudTest() {
 		SolicitudRegistroModelRequest request = new SolicitudRegistroModelRequest();
 		request.setIdCliente(1);
 		request.setIdServicio(1);
 		request.setIdDistrito(1);
 		request.setDireccion("Av. Arequipa #1835");
-		
+
 		SolicitudRegistroModelResponse response = clienteService.insertSolicitud(request);
 		System.out.println("Response solicitud registro : " + gson.toJson(response));
 	}
-	
+
 	@Test
-	public void asignarTecnicoTest()
-	{
+	public void asignarTecnicoTest() {
 		SolicitudAsignarTecnicoModelRequest request = new SolicitudAsignarTecnicoModelRequest();
 		request.setIdSolicitud(2);
 		request.setIdPersonal(2);
 		request.setFechaAsignada("2019/06/30");
-		
+
 		SolicitudAsignarTecnicoModelResponse response = clienteService.asignarTecnico(request);
 		System.out.println("Response asignar tecnico : " + gson.toJson(response));
 	}
-	
+
 }

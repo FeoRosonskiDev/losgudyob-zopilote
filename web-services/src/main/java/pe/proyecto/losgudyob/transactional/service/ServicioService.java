@@ -8,6 +8,6 @@ import pe.proyecto.losgudyob.view.model.ServicioUpdateModelResponse;
 public interface ServicioService {
 
 	public ServicioRegistroModelResponse insertService(ServicioRegistroModelRequest request);
-	
+
 	public ServicioUpdateModelResponse updateService(ServicioUpdateModelRequest request);
 }

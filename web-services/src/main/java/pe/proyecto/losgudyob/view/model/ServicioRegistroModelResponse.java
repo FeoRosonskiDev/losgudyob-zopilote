@@ -8,24 +8,27 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "ServicioRegistroModelResponse")
-public class ServicioRegistroModelResponse implements Serializable{
+public class ServicioRegistroModelResponse implements Serializable {
 
 	private static final long serialVersionUID = -2315525684384323765L;
-	
+
 	private String codigoRespuesta;
 	private String respuesta;
-	
+
 	public String getCodigoRespuesta() {
 		return codigoRespuesta;
 	}
+
 	public void setCodigoRespuesta(String codigoRespuesta) {
 		this.codigoRespuesta = codigoRespuesta;
 	}
+
 	public String getRespuesta() {
 		return respuesta;
 	}
+
 	public void setRespuesta(String respuesta) {
 		this.respuesta = respuesta;
 	}
-	
+
 }

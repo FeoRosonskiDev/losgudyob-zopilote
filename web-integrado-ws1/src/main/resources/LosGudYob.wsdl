@@ -1,0 +1,462 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://endpoint.view.losgudyob.proyecto.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="LosGudYobEndpointImplService" targetNamespace="http://endpoint.view.losgudyob.proyecto.pe/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://endpoint.view.losgudyob.proyecto.pe/" elementFormDefault="unqualified" targetNamespace="http://endpoint.view.losgudyob.proyecto.pe/" version="1.0">
+
+  <xs:element name="ClienteEliminarModelRequest" type="tns:eliminarModelRequest"/>
+
+  <xs:element name="ClienteRegistroModelRequest" type="tns:clienteRegistroModelRequest"/>
+
+  <xs:element name="ClienteRegistroModelResponse" type="tns:clienteRegistroModelResponse"/>
+
+  <xs:element name="ClienteUpdateModelRequest" type="tns:clienteUpdateModelRequest"/>
+
+  <xs:element name="ClienteUpdateModelResponse" type="tns:clienteUpdateModelResponse"/>
+
+  <xs:element name="ServicioRegistroModelRequest" type="tns:servicioRegistroModelRequest"/>
+
+  <xs:element name="ServicioRegistroModelResponse" type="tns:servicioRegistroModelResponse"/>
+
+  <xs:element name="ServicioUpdateModelRequest" type="tns:servicioUpdateModelRequest"/>
+
+  <xs:element name="ServicioUpdateModelResponse" type="tns:servicioUpdateModelResponse"/>
+
+  <xs:element name="SolicitudAsignarTecnicoModelRequest" type="tns:solicitudAsignarTecnicoModelRequest"/>
+
+  <xs:element name="SolicitudAsignarTecnicoModelResponse" type="tns:solicitudAsignarTecnicoModelResponse"/>
+
+  <xs:element name="SolicitudRegistroModelRequest" type="tns:solicitudRegistroModelRequest"/>
+
+  <xs:element name="SolicitudRegistroModelResponse" type="tns:solicitudRegistroModelResponse"/>
+
+  <xs:element name="asignarTecnico" type="tns:asignarTecnico"/>
+
+  <xs:element name="asignarTecnicoResponse" type="tns:asignarTecnicoResponse"/>
+
+  <xs:element name="eliminarClient" type="tns:eliminarClient"/>
+
+  <xs:element name="eliminarClientResponse" type="tns:eliminarClientResponse"/>
+
+  <xs:element name="eliminarSolicitud" type="tns:eliminarSolicitud"/>
+
+  <xs:element name="eliminarSolicitudResponse" type="tns:eliminarSolicitudResponse"/>
+
+  <xs:element name="insertClient" type="tns:insertClient"/>
+
+  <xs:element name="insertClientResponse" type="tns:insertClientResponse"/>
+
+  <xs:element name="insertService" type="tns:insertService"/>
+
+  <xs:element name="insertServiceResponse" type="tns:insertServiceResponse"/>
+
+  <xs:element name="insertSolicitud" type="tns:insertSolicitud"/>
+
+  <xs:element name="insertSolicitudResponse" type="tns:insertSolicitudResponse"/>
+
+  <xs:element name="updateClient" type="tns:updateClient"/>
+
+  <xs:element name="updateClientResponse" type="tns:updateClientResponse"/>
+
+  <xs:element name="updateService" type="tns:updateService"/>
+
+  <xs:element name="updateServiceResponse" type="tns:updateServiceResponse"/>
+
+  <xs:complexType name="eliminarClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:eliminarModelRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eliminarModelRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="estado" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eliminarClientResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClienteUpdateModelResponse" type="tns:clienteUpdateModelResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clienteUpdateModelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoRespuesta" type="xs:string"/>
+      <xs:element minOccurs="0" name="respuesta" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:clienteUpdateModelRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clienteUpdateModelRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="celular" type="xs:string"/>
+      <xs:element minOccurs="0" name="correo" type="xs:string"/>
+      <xs:element minOccurs="0" name="clave" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateClientResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClienteUpdateModelResponse" type="tns:clienteUpdateModelResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:servicioUpdateModelRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="servicioUpdateModelRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="tipo" type="xs:string"/>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+      <xs:element minOccurs="0" name="precio" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ServicioUpdateModelResponse" type="tns:servicioUpdateModelResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="servicioUpdateModelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoRespuesta" type="xs:string"/>
+      <xs:element minOccurs="0" name="respuesta" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="asignarTecnico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:solicitudAsignarTecnicoModelRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="solicitudAsignarTecnicoModelRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaAsignada" type="xs:string"/>
+      <xs:element minOccurs="0" name="idSolicitud" type="xs:int"/>
+      <xs:element minOccurs="0" name="idPersonal" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="asignarTecnicoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SolicitudAsignarTecnicoModelResponse" type="tns:solicitudAsignarTecnicoModelResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="solicitudAsignarTecnicoModelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoRespuesta" type="xs:string"/>
+      <xs:element minOccurs="0" name="respuesta" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eliminarSolicitud">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:eliminarModelRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eliminarSolicitudResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClienteUpdateModelResponse" type="tns:clienteUpdateModelResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:clienteRegistroModelRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clienteRegistroModelRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string"/>
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string"/>
+      <xs:element minOccurs="0" name="dni" type="xs:string"/>
+      <xs:element minOccurs="0" name="celular" type="xs:string"/>
+      <xs:element minOccurs="0" name="correo" type="xs:string"/>
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:string"/>
+      <xs:element minOccurs="0" name="clave" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertClientResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClienteRegistroModelResponse" type="tns:clienteRegistroModelResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clienteRegistroModelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoRespuesta" type="xs:string"/>
+      <xs:element minOccurs="0" name="respuesta" type="xs:string"/>
+      <xs:element minOccurs="0" name="correo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:servicioRegistroModelRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="servicioRegistroModelRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipo" type="xs:string"/>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+      <xs:element minOccurs="0" name="precio" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ServicioRegistroModelResponse" type="tns:servicioRegistroModelResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="servicioRegistroModelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoRespuesta" type="xs:string"/>
+      <xs:element minOccurs="0" name="respuesta" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertSolicitud">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:solicitudRegistroModelRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="solicitudRegistroModelRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idCliente" type="xs:int"/>
+      <xs:element minOccurs="0" name="idServicio" type="xs:int"/>
+      <xs:element minOccurs="0" name="idDistrito" type="xs:int"/>
+      <xs:element minOccurs="0" name="direccion" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertSolicitudResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SolicitudRegistroModelResponse" type="tns:solicitudRegistroModelResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="solicitudRegistroModelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoRespuesta" type="xs:string"/>
+      <xs:element minOccurs="0" name="respuesta" type="xs:string"/>
+      <xs:element minOccurs="0" name="descripcionServicio" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="eliminarClient">
+    <wsdl:part element="tns:eliminarClient" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateService">
+    <wsdl:part element="tns:updateService" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertSolicitudResponse">
+    <wsdl:part element="tns:insertSolicitudResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertClientResponse">
+    <wsdl:part element="tns:insertClientResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="asignarTecnico">
+    <wsdl:part element="tns:asignarTecnico" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarClientResponse">
+    <wsdl:part element="tns:eliminarClientResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertServiceResponse">
+    <wsdl:part element="tns:insertServiceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertService">
+    <wsdl:part element="tns:insertService" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateServiceResponse">
+    <wsdl:part element="tns:updateServiceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateClient">
+    <wsdl:part element="tns:updateClient" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateClientResponse">
+    <wsdl:part element="tns:updateClientResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarSolicitud">
+    <wsdl:part element="tns:eliminarSolicitud" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertClient">
+    <wsdl:part element="tns:insertClient" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertSolicitud">
+    <wsdl:part element="tns:insertSolicitud" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="asignarTecnicoResponse">
+    <wsdl:part element="tns:asignarTecnicoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarSolicitudResponse">
+    <wsdl:part element="tns:eliminarSolicitudResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LosGudYobEndpoint">
+    <wsdl:operation name="eliminarClient">
+      <wsdl:input message="tns:eliminarClient" name="eliminarClient">
+    </wsdl:input>
+      <wsdl:output message="tns:eliminarClientResponse" name="eliminarClientResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <wsdl:input message="tns:updateClient" name="updateClient">
+    </wsdl:input>
+      <wsdl:output message="tns:updateClientResponse" name="updateClientResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateService">
+      <wsdl:input message="tns:updateService" name="updateService">
+    </wsdl:input>
+      <wsdl:output message="tns:updateServiceResponse" name="updateServiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="asignarTecnico">
+      <wsdl:input message="tns:asignarTecnico" name="asignarTecnico">
+    </wsdl:input>
+      <wsdl:output message="tns:asignarTecnicoResponse" name="asignarTecnicoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarSolicitud">
+      <wsdl:input message="tns:eliminarSolicitud" name="eliminarSolicitud">
+    </wsdl:input>
+      <wsdl:output message="tns:eliminarSolicitudResponse" name="eliminarSolicitudResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertClient">
+      <wsdl:input message="tns:insertClient" name="insertClient">
+    </wsdl:input>
+      <wsdl:output message="tns:insertClientResponse" name="insertClientResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertService">
+      <wsdl:input message="tns:insertService" name="insertService">
+    </wsdl:input>
+      <wsdl:output message="tns:insertServiceResponse" name="insertServiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertSolicitud">
+      <wsdl:input message="tns:insertSolicitud" name="insertSolicitud">
+    </wsdl:input>
+      <wsdl:output message="tns:insertSolicitudResponse" name="insertSolicitudResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LosGudYobEndpointImplServiceSoapBinding" type="tns:LosGudYobEndpoint">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="eliminarClient">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="eliminarClient">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="eliminarClientResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateClient">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateClientResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateService">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateService">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="asignarTecnico">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="asignarTecnico">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="asignarTecnicoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarSolicitud">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="eliminarSolicitud">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="eliminarSolicitudResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertClient">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insertClient">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertClientResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertService">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insertService">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertSolicitud">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insertSolicitud">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertSolicitudResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LosGudYobEndpointImplService">
+    <wsdl:port binding="tns:LosGudYobEndpointImplServiceSoapBinding" name="LosGudYobEndpointImplPort">
+      <soap:address location="http://localhost:8082/services/LosGudYob"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,4 +1,3 @@
-﻿create database los_gud_yob_db;
 use los_gud_yob_db;
 
 CREATE TABLE clientes (

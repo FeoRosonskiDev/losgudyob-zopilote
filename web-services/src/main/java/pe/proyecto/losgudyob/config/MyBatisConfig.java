@@ -18,23 +18,22 @@ import com.zaxxer.hikari.HikariDataSource;
 //TODO: cambiar por su paquete
 @MapperScan(basePackages = "pe.proyecto.losgudyob.persistence.repository")
 public class MyBatisConfig {
-	
+
 	@Value("#{ environment['persistence.db.driverClass'] }")
 	private String driverClass;
-    
-    @Value("#{ environment['persistence.db.url'] }")
+
+	@Value("#{ environment['persistence.db.url'] }")
 	private String url;
 
-    @Value("#{ environment['persistence.db.username'] }")
+	@Value("#{ environment['persistence.db.username'] }")
 	private String username;
 
-    @Value("#{ environment['persistence.db.password'] }")
+	@Value("#{ environment['persistence.db.password'] }")
 	private String password;
 
-    @Value("#{ environment['persistence.db.domain'] }")
+	@Value("#{ environment['persistence.db.domain'] }")
 	private String domain;
-    
-    
+
 	@Bean
 	public DataSource dataSource() {
 		HikariDataSource dataSource = new HikariDataSource();
@@ -44,7 +43,7 @@ public class MyBatisConfig {
 		dataSource.setPassword(this.password);
 		return dataSource;
 	}
-		
+
 	@Bean
 	public PlatformTransactionManager transactionManager() {
 		return new DataSourceTransactionManager(this.dataSource());

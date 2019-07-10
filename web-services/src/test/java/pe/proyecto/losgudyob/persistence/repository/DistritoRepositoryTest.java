@@ -10,10 +10,9 @@ public class DistritoRepositoryTest extends BaseTest {
 
 	@Autowired
 	private DistritoRepository distritoRepository;
-	
+
 	@Test
-	public void findDistritoByIdTest()
-	{
+	public void findDistritoByIdTest() {
 		Distrito distrito = distritoRepository.findDistritoById(1);
 		System.out.println("Distrito : " + gson.toJson(distrito));
 	}

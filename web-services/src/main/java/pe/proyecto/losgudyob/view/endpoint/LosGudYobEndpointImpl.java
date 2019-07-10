@@ -9,6 +9,7 @@ import pe.proyecto.losgudyob.view.model.ClienteRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.ClienteRegistroModelResponse;
 import pe.proyecto.losgudyob.view.model.ClienteUpdateModelRequest;
 import pe.proyecto.losgudyob.view.model.ClienteUpdateModelResponse;
+import pe.proyecto.losgudyob.view.model.EliminarModelRequest;
 import pe.proyecto.losgudyob.view.model.ServicioRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.ServicioRegistroModelResponse;
 import pe.proyecto.losgudyob.view.model.ServicioUpdateModelRequest;
@@ -20,10 +21,10 @@ import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelResponse;
 
 @Component
 public class LosGudYobEndpointImpl implements LosGudYobEndpoint {
-	
+
 	@Autowired
 	private ClienteService clienteService;
-	
+
 	@Autowired
 	private ServicioService servicioService;
 
@@ -35,6 +36,11 @@ public class LosGudYobEndpointImpl implements LosGudYobEndpoint {
 	@Override
 	public ClienteUpdateModelResponse updateClient(ClienteUpdateModelRequest request) {
 		return clienteService.updateClient(request);
+	}
+
+	@Override
+	public ClienteUpdateModelResponse eliminarClient(EliminarModelRequest request) {
+		return clienteService.eliminarClient(request);
 	}
 
 	@Override
@@ -50,6 +56,11 @@ public class LosGudYobEndpointImpl implements LosGudYobEndpoint {
 	@Override
 	public SolicitudRegistroModelResponse insertSolicitud(SolicitudRegistroModelRequest request) {
 		return clienteService.insertSolicitud(request);
+	}
+
+	@Override
+	public ClienteUpdateModelResponse eliminarSolicitud(EliminarModelRequest request) {
+		return clienteService.eliminarSolicitud(request);
 	}
 
 	@Override

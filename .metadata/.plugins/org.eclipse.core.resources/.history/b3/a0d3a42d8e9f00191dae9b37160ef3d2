@@ -1,0 +1,72 @@
+package pe.edu.idat.web.view;
+
+import java.io.IOException;
+import java.sql.Date;
+
+import javax.inject.Inject;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import pe.edu.idat.web.persistence.soap.service.ClienteRegistroModelRequest;
+import pe.edu.idat.web.persistence.soap.service.ClienteRegistroModelResponse;
+import pe.edu.idat.web.transactional.impl.Cliente;
+
+@WebServlet(urlPatterns = "/registrarCliente", loadOnStartup = 1)
+public class ClienteRegistroServlet extends HttpServlet {
+	
+	@Inject
+	private Cliente c;
+
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		req.getRequestDispatcher("/Cliente/agregarCliente.jsp").forward(req, resp);
+		
+		
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String mensaje = req.getParameter("metodo");
+		
+		if(mensaje == "registrarCliente") {
+		
+			//variables
+			String nombre = req.getParameter("nombreCliente");
+			String paterno = req.getParameter("paterno");
+			String materno = req.getParameter("materno");
+			String dni = req.getParameter("dni");
+			String celular = req.getParameter("celular");
+			String correo = req.getParameter("correo");
+			String fechaNacimiento = req.getParameter("fechaNacimiento");
+			String clave = req.getParameter("pass");
+			
+			//logica
+			ClienteRegistroModelRequest Crequest = new ClienteRegistroModelRequest();
+			
+			Crequest.setNombre(nombre);
+			Crequest.setApellidoPaterno(paterno);
+			Crequest.setApellidoMaterno(materno);
+			Crequest.setDni(dni);
+			Crequest.setCelular(celular);
+			Crequest.setCorreo(correo);
+			Crequest.setFechaNacimiento(fechaNacimiento);
+			Crequest.setClave(clave);
+			
+			ClienteRegistroModelResponse Cresponse = c.clienteregistro(Crequest);
+			
+			//-- Respuesta
+					req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta() );
+					getServletContext()
+						.getRequestDispatcher("/Cliente/agregarCliente.jsp")
+						.forward(req, resp);
+			
+			}
+	}
+	
+}

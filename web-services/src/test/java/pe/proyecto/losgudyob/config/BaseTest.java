@@ -15,23 +15,21 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-@ContextConfiguration( classes = {
-		TestConfig.class, MyBatisConfig.class
-})
+@ContextConfiguration(classes = { TestConfig.class, MyBatisConfig.class })
 @ActiveProfiles("test")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class BaseTest {
-	
+
 	@Autowired
 	private DataSource dataSource;
-	
+
 	protected static Gson gson;
-	
+
 	@BeforeClass
 	public static void setUpBeforesClass() {
 		gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
 	}
-	
+
 	@Test
 	public void dataSourceTest() {
 		assertNotNull(dataSource);

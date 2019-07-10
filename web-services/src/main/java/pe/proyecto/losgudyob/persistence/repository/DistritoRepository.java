@@ -9,9 +9,7 @@ import pe.proyecto.losgudyob.persistence.domain.Distrito;
 public interface DistritoRepository {
 
 	@Select("select * from distritos where id = #{id}")
-	@Results(value = {
-			@Result(column = "id", 			property = "id"),
-			@Result(column = "descripcion", property = "descripcion")
-	})
+	@Results(value = { @Result(column = "id", property = "id"),
+			@Result(column = "descripcion", property = "descripcion") })
 	public Distrito findDistritoById(Integer id);
 }

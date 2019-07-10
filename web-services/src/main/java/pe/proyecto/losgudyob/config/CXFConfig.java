@@ -16,20 +16,20 @@ import pe.proyecto.losgudyob.view.endpoint.LosGudYobEndpoint;
 
 @Configuration
 public class CXFConfig {
-	
+
 	@Autowired
 	private LosGudYobEndpoint lgyEndpoint;
-	
+
 	@Bean
 	public ServletRegistrationBean dispatcherServlet() {
 		return new ServletRegistrationBean(new CXFServlet(), "/services/*");
 	}
-	
+
 	@Bean(name = Bus.DEFAULT_BUS_ID)
 	public SpringBus springBus() {
 		return new SpringBus();
 	}
-	
+
 	@Bean
 	public Endpoint endpoint() {
 		EndpointImpl endpoint = new EndpointImpl(springBus(), lgyEndpoint);

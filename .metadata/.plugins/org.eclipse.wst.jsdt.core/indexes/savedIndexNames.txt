@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\Administrador\Desktop\ZOPI\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4105463202.index
+1422452427.index
+2655406318.index
+392307553.index
+854586347.index
+3380770496.index
+1820309178.index
