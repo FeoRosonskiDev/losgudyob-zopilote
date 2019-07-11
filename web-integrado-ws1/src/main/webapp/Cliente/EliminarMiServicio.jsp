@@ -24,13 +24,13 @@
             <h1>Agregar Cliente</h1>
             <form 
                 id="frmRegistroCliente"
-                action="<%=request.getContextPath()%>/registrarCliente"
+                action="<%=request.getContextPath()%>/Cliente"
                 method="post"
                 onkeypress="if (event.keycode == 13) {
                                     return false;
                                 }"
                 >
-                <input type="hidden" value="registrarCliente" name="metodo">
+                <input type="hidden" value="solicitudEliminar" name="metodo">
                 <label>Nombres: </label>
                 <input type="text" id="ACnombre" name="ACnombre" required="" maxlength="50" minlength="2">
                 <label>Apellido Paterno: </label>

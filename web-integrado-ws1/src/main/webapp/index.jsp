@@ -53,8 +53,8 @@
                                 <h1 class="title"><a href="${pageContext.servletContext.contextPath}/Cliente/modificarCliente.jsp">WS Modificar Cliente</a></h1>
                                 <h1 class="title"><a href="${pageContext.servletContext.contextPath}/Cliente/eliminarCliente.jsp">WS Eliminar Cliente</a></h1>
                                 <h1 class="title"><a href="${pageContext.servletContext.contextPath}/Cliente/solicitarMiServicio.jsp">WS Solicitar Servicio</a></h1>
-                                <h1 class="title"><a href="${pageContext.servletContext.contextPath}/Cliente/modificarMiServicio">WS Modificar Mi Servicio</a></h1>
-                                <h1 class="title"><a href="${pageContext.servletContext.contextPath}/Cliente/EliminarMiServicio">WS Eliminar Mi Servicio</a></h1>
+                            <!--<h1 class="title"><a href="${pageContext.servletContext.contextPath}/Cliente/modificarMiServicio">WS Modificar Mi Servicio</a></h1>   
+                                <h1 class="title"><a href="${pageContext.servletContext.contextPath}/Cliente/EliminarMiServicio">WS Eliminar Mi Servicio</a></h1>-->
                             </div>
                         </div>
                     </div>

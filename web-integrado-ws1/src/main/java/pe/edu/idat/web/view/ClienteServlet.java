@@ -13,6 +13,9 @@ import pe.edu.idat.web.persistence.soap.service.ClienteRegistroModelRequest;
 import pe.edu.idat.web.persistence.soap.service.ClienteRegistroModelResponse;
 import pe.edu.idat.web.persistence.soap.service.ClienteUpdateModelRequest;
 import pe.edu.idat.web.persistence.soap.service.ClienteUpdateModelResponse;
+import pe.edu.idat.web.persistence.soap.service.EliminarModelRequest;
+import pe.edu.idat.web.persistence.soap.service.SolicitudRegistroModelRequest;
+import pe.edu.idat.web.persistence.soap.service.SolicitudRegistroModelResponse;
 import pe.edu.idat.web.transactional.impl.Cliente;
 
 @WebServlet(urlPatterns = "/Cliente", loadOnStartup = 1)
@@ -34,7 +37,7 @@ public class ClienteServlet extends HttpServlet {
 
 		String mensaje = req.getParameter("metodo");
 
-		if(mensaje.equals("registrarCliente")) {
+		if (mensaje.equalsIgnoreCase("registrarCliente")) {
 
 			// variables
 			String nombre = req.getParameter("ACnombre");
@@ -65,40 +68,80 @@ public class ClienteServlet extends HttpServlet {
 			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
 
 		}
-		
-		if(mensaje.equals("modificarCliente")) {
-			
+
+		if (mensaje.equalsIgnoreCase("modificarCliente")) {
+
 			Integer id = Integer.valueOf(req.getParameter("MCid"));
 			String correo = req.getParameter("MCcorreo");
-			String celular =req.getParameter("MCcelular");
+			String celular = req.getParameter("MCcelular");
 			String clave = req.getParameter("MCclave");
-			
+
 			ClienteUpdateModelRequest Crequest = new ClienteUpdateModelRequest();
-			
+
 			Crequest.setId(id);
 			Crequest.setCorreo(correo);
 			Crequest.setCelular(celular);
 			Crequest.setClave(clave);
-			
+
 			ClienteUpdateModelResponse Cresponse = c.clienteupdate(Crequest);
 			req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
+			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+
+		}
+
+		if (mensaje.equalsIgnoreCase("eliminarCliente")) {
+
+			Integer id = Integer.valueOf(req.getParameter("ECid"));
+
+			EliminarModelRequest Crequest = new EliminarModelRequest();
+
+			Crequest.setId(id);
+			Crequest.setEstado(2);
+
+			ClienteUpdateModelResponse Cresponse = c.clienteeliminar(Crequest);
+
+			req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
+			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+		}
+
+		if (mensaje.equalsIgnoreCase("solicitudRegistro")) {
+			
+			Integer id_cliente = Integer.valueOf(req.getParameter(""));
+			Integer id_servicio = Integer.valueOf(req.getParameter(""));
+			Integer id_distrito = Integer.valueOf(req.getParameter(""));
+			String direccion = req.getParameter("");
+			
+			SolicitudRegistroModelRequest Srequest = new SolicitudRegistroModelRequest();
+			
+			Srequest.setIdCliente(id_cliente);
+			Srequest.setIdServicio(id_servicio);
+			Srequest.setIdDistrito(id_distrito);
+			Srequest.setDireccion(direccion);
+			
+			SolicitudRegistroModelResponse Sresponse = c.insertSolicitud(Srequest);
+			
+			req.setAttribute("mensajeRespuesta", Sresponse.getRespuesta());
 			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
 			
 		}
-	
-		if(mensaje.equals("eliminarCliente")) {
+
+		if (mensaje.equalsIgnoreCase("solicitudModificar")) {
+
+		}
+		if (mensaje.equalsIgnoreCase("solicitudEliminar")) {
 			
-			Integer id = Integer.valueOf(req.getParameter("ECid"));
-			
-			ClienteUpdateModelRequest Crequest = new ClienteUpdateModelRequest();
-			
+			Integer id = Integer.valueOf(req.getParameter(""));
+
+			EliminarModelRequest Crequest = new EliminarModelRequest();
+
 			Crequest.setId(id);
-			
-			ClienteUpdateModelResponse Cresponse = c.clienteupdate(Crequest);
-			
-			
+			Crequest.setEstado(2);
+
+			ClienteUpdateModelResponse Cresponse = c.eliminarSolicitud(Crequest);
+
 			req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
 			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+
 		}
 	}
 

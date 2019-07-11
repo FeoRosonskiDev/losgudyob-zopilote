@@ -37,32 +37,72 @@ public class ClienteImpl implements Cliente {
 
 	@Override
 	public ClienteUpdateModelResponse clienteupdate(ClienteUpdateModelRequest request) {
-		// TODO Auto-generated method stub
+		try {
+
+			LosGudYobEndpointImplService cliente = new LosGudYobEndpointImplService(
+					new URL("http://localhost:8082/services/LosGudYob?wsdl"));
+
+			ClienteUpdateModelResponse response = cliente.getLosGudYobEndpointImplPort().updateClient(request);
+
+			return response;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
 	@Override
 	public ClienteUpdateModelResponse clienteeliminar(EliminarModelRequest request) {
-		// TODO Auto-generated method stub
+		try {
+
+			LosGudYobEndpointImplService cliente = new LosGudYobEndpointImplService(
+					new URL("http://localhost:8082/services/LosGudYob?wsdl"));
+
+			ClienteUpdateModelResponse response = cliente.getLosGudYobEndpointImplPort().eliminarClient(request);
+
+			return response;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
 	@Override
 	public SolicitudRegistroModelResponse insertSolicitud(SolicitudRegistroModelRequest request) {
-		// TODO Auto-generated method stub
+		try {
+
+			LosGudYobEndpointImplService cliente = new LosGudYobEndpointImplService(
+					new URL("http://localhost:8082/services/LosGudYob?wsdl"));
+
+			SolicitudRegistroModelResponse response = cliente.getLosGudYobEndpointImplPort().insertSolicitud(request);
+
+			return response;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
 	@Override
 	public ClienteUpdateModelResponse eliminarSolicitud(EliminarModelRequest request) {
-		// TODO Auto-generated method stub
+		try {
+
+			LosGudYobEndpointImplService cliente = new LosGudYobEndpointImplService(
+					new URL("http://localhost:8082/services/LosGudYob?wsdl"));
+
+			ClienteUpdateModelResponse response = cliente.getLosGudYobEndpointImplPort().eliminarSolicitud(request);
+
+			return response;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
-	@Override
-	public SolicitudAsignarTecnicoModelResponse asignarTecnico(SolicitudAsignarTecnicoModelRequest request) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

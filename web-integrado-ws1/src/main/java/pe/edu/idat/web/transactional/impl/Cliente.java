@@ -24,6 +24,4 @@ public interface Cliente {
 
 	ClienteUpdateModelResponse eliminarSolicitud(EliminarModelRequest request);
 
-	SolicitudAsignarTecnicoModelResponse asignarTecnico(SolicitudAsignarTecnicoModelRequest request);
-
 }

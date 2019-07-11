@@ -19,7 +19,7 @@
                 </span>
             </p>
         </div>
-        
+       
         <div id="Body">
             <h1>Modificar Cliente</h1>
             <form 
