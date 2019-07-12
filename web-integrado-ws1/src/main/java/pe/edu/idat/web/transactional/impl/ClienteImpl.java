@@ -103,6 +103,4 @@ public class ClienteImpl implements Cliente {
 		return null;
 	}
 
-	
-
 }

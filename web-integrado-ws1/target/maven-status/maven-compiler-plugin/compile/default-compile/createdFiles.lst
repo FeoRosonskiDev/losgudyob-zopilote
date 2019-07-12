@@ -5,6 +5,7 @@ pe\edu\idat\web\persistence\soap\service\ServicioUpdateModelResponse.class
 pe\edu\idat\web\persistence\soap\service\InsertServiceResponse.class
 pe\edu\idat\web\persistence\soap\service\EliminarModelRequest.class
 pe\edu\idat\web\persistence\soap\service\UpdateServiceResponse.class
+pe\edu\idat\web\view\ServicioServlet.class
 pe\edu\idat\web\ServletInitializer.class
 pe\edu\idat\web\persistence\soap\service\AsignarTecnico.class
 pe\edu\idat\web\persistence\soap\service\EliminarSolicitudResponse.class

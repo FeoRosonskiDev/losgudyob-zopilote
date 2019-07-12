@@ -21,9 +21,9 @@
         </div>
         
         <div id="Body">
-            <h1>Agregar Cliente</h1>
+            <h1>Asignar Técnico a servicio</h1>
             <form 
-                id="frmRegistroCliente"
+                id="frmAsignarTecnico"
                 action="<%=request.getContextPath()%>/Servicio"
                 method="post"
                 onkeypress="if (event.keycode == 13) {
@@ -31,24 +31,10 @@
                                 }"
                 >
                 <input type="hidden" value="AsignarTecnico" name="metodo">
-                <label>Nombres: </label>
-                <input type="text" id="ACnombre" name="ACnombre" required="" maxlength="50" minlength="2">
-                <label>Apellido Paterno: </label>
-                <input type="text" id="ACpaterno" name="ACpaterno" required="" maxlength="50" minlength="2">
-                <label>Apellido Materno: </label>
-                <input type="text" id="ACmaterno" name="ACmaterno" required="" maxlength="50" minlength="2">
-                <label>DNI: </label>
-                <input type="text" id="ACdni" name="ACdni" required="" maxlength="8" minlength="8">
-                <label>Celular: </label>
-                <input type="phone" id="ACcelular" name="ACcelular" required="" maxlength="9" minlength="7">
-                <label>Correo Electronico: </label>
-                <input type="email" id="ACcorreo" name="ACcorreo" required="">
-                <label>Fecha de Nacimiento: </label>
-                <input type="date" id="ACfechaNacimiento" name="ACfechaNacimiento" required="">
-                <label>Nueva Contraseña: </label>
-                <input type="password" id="ACpass" name="ACpass" required="">
-                <label>Confirmar Nueva Contraseña: </label>
-                <input type="password" required="">
+                <label>ID personal: </label>
+                <input type="text" id="ATidpersonal" name="ATidpersonal" required="">
+                <label>Fecha asignada: </label>
+                <input type="date" id="ATfecha" name="ATfecha" required="">
                 <input type="submit" value="Grabar" >
                 <input type="reset" value="Limpiar" >
             </form>

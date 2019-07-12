@@ -11,7 +11,7 @@ import pe.edu.idat.web.persistence.soap.service.ServicioUpdateModelResponse;
 import pe.edu.idat.web.persistence.soap.service.SolicitudAsignarTecnicoModelRequest;
 import pe.edu.idat.web.persistence.soap.service.SolicitudAsignarTecnicoModelResponse;
 
-public class ServiceImpl  implements Service{
+public class ServiceImpl implements Service {
 
 	@Override
 	public ServicioRegistroModelResponse registrarservicio(ServicioRegistroModelRequest request) {
@@ -46,24 +46,20 @@ public class ServiceImpl  implements Service{
 		}
 		return null;
 	}
-    /*
-	@Override
-	public ServicioUpdateModelResponse eliminarservicio(EliminarModelRequest request) {
-		try {
-
-			LosGudYobEndpointImplService service = new LosGudYobEndpointImplService(
-					new URL("http://localhost:8082/services/LosGudYob?wsdl"));
-
-			ServicioUpdateModelResponse response = service.getLosGudYobEndpointImplPort().(request);
-
-			return response;
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-	*/
+	/*
+	 * @Override public ServicioUpdateModelResponse
+	 * eliminarservicio(EliminarModelRequest request) { try {
+	 * 
+	 * LosGudYobEndpointImplService service = new LosGudYobEndpointImplService( new
+	 * URL("http://localhost:8082/services/LosGudYob?wsdl"));
+	 * 
+	 * ServicioUpdateModelResponse response =
+	 * service.getLosGudYobEndpointImplPort().(request);
+	 * 
+	 * return response;
+	 * 
+	 * } catch (Exception e) { e.printStackTrace(); } return null; }
+	 */
 
 	@Override
 	public SolicitudAsignarTecnicoModelResponse asignarTecnico(SolicitudAsignarTecnicoModelRequest request) {
@@ -72,7 +68,8 @@ public class ServiceImpl  implements Service{
 			LosGudYobEndpointImplService service = new LosGudYobEndpointImplService(
 					new URL("http://localhost:8082/services/LosGudYob?wsdl"));
 
-			SolicitudAsignarTecnicoModelResponse response = service.getLosGudYobEndpointImplPort().asignarTecnico(request);
+			SolicitudAsignarTecnicoModelResponse response = service.getLosGudYobEndpointImplPort()
+					.asignarTecnico(request);
 
 			return response;
 
@@ -81,6 +78,5 @@ public class ServiceImpl  implements Service{
 		}
 		return null;
 	}
-
 
 }

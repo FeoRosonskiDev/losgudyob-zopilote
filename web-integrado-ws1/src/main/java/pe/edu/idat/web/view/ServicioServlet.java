@@ -22,43 +22,44 @@ public class ServicioServlet extends HttpServlet {
 
 	@Inject
 	private Service s;
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
+		req.getRequestDispatcher("/Servicio/agregarServicio.jsp").forward(req, resp);
+		req.getRequestDispatcher("/Servicio/modificarServicio.jsp").forward(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
+
 		String mensaje = req.getParameter("metodo");
-		
-		if(mensaje.equalsIgnoreCase("registrarServicio")) {
+
+		if (mensaje.equalsIgnoreCase("registrarServicio")) {
 			// variables
-						String tipo = req.getParameter("");
-						String descripcion = req.getParameter("");
-						Double precio = Double.valueOf(req.getParameter(""));
+			String tipo = req.getParameter("AStipo");
+			String descripcion = req.getParameter("ASdescripcion");
+			Double precio = Double.valueOf(req.getParameter("ASprecio"));
 
-						// logica
-						ServicioRegistroModelRequest Crequest = new ServicioRegistroModelRequest();
+			// logica
+			ServicioRegistroModelRequest Crequest = new ServicioRegistroModelRequest();
 
-						Crequest.setTipo(tipo);
-						Crequest.setDescripcion(descripcion);
-						Crequest.setPrecio(precio);
+			Crequest.setTipo(tipo);
+			Crequest.setDescripcion(descripcion);
+			Crequest.setPrecio(precio);
 
-						ServicioRegistroModelResponse Cresponse = s.registrarservicio(Crequest);
+			ServicioRegistroModelResponse Cresponse = s.registrarservicio(Crequest);
 
-						// -- Respuesta
-						req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
-						getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+			// -- Respuesta
+			req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
+			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
 		}
-		
-		if(mensaje.equalsIgnoreCase("modificarServicio")) {
-			
-			Integer id = Integer.valueOf(req.getParameter(""));
-			String tipo = req.getParameter("");
-			String descripcion = req.getParameter("");
-			double precio = Double.valueOf(req.getParameter(""));
+
+		if (mensaje.equalsIgnoreCase("modificarServicio")) {
+
+			Integer id = Integer.valueOf(req.getParameter("MSid"));
+			String tipo = req.getParameter("MStipo");
+			String descripcion = req.getParameter("MSdescripcion");
+			double precio = Double.valueOf(req.getParameter("MSprecio"));
 
 			ServicioUpdateModelRequest Srequest = new ServicioUpdateModelRequest();
 
@@ -71,29 +72,28 @@ public class ServicioServlet extends HttpServlet {
 			req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
 			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
 		}
-		
-		if(mensaje.equalsIgnoreCase("eliminarServicio")) {
-		/*	Integer id = Integer.valueOf(req.getParameter("ECid"));
 
-			EliminarModelRequest Crequest = new EliminarModelRequest();
-
-			Crequest.setId(id);
-			Crequest.setEstado(2);
-
-			ServicioUpdateModelRequest Cresponse = s.(Crequest);
-
-			req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
-			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);*/
-		}
-		
-		if(mensaje.equalsIgnoreCase("asignarTecnico")) {
-			Integer idSolicitud = Integer.valueOf(req.getParameter(""));
-			Integer idPersonal = Integer.valueOf(req.getParameter(""));
-			String fechaasignada = req.getParameter("");
+		/*
+		 * if(mensaje.equalsIgnoreCase("eliminarServicio")) { Integer id =
+		 * Integer.valueOf(req.getParameter("ECid"));
+		 * 
+		 * EliminarModelRequest Crequest = new EliminarModelRequest();
+		 * 
+		 * Crequest.setId(id); Crequest.setEstado(2);
+		 * 
+		 * ServicioUpdateModelRequest Cresponse = s.(Crequest);
+		 * 
+		 * req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
+		 * getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp); }
+		 */
+		if (mensaje.equalsIgnoreCase("AsignarTecnico")) {
+			// Integer idSolicitud = Integer.valueOf(req.getParameter(""));
+			Integer idPersonal = Integer.valueOf(req.getParameter("ATidpersonal"));
+			String fechaasignada = req.getParameter("ATfecha");
 
 			SolicitudAsignarTecnicoModelRequest Srequest = new SolicitudAsignarTecnicoModelRequest();
 
-			Srequest.setIdSolicitud(idSolicitud);
+			Srequest.setIdSolicitud(null);
 			Srequest.setIdPersonal(idPersonal);
 			Srequest.setFechaAsignada(fechaasignada);
 

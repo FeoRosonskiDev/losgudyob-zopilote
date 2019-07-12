@@ -11,10 +11,10 @@ import pe.edu.idat.web.persistence.soap.service.SolicitudAsignarTecnicoModelResp
 public interface Service {
 
 	ServicioRegistroModelResponse registrarservicio(ServicioRegistroModelRequest request);
-	
+
 	ServicioUpdateModelResponse actualizarservicio(ServicioUpdateModelRequest request);
-	
-	//ServicioUpdateModelResponse eliminarservicio(EliminarModelRequest request);
-	
+
+	// ServicioUpdateModelResponse eliminarservicio(EliminarModelRequest request);
+
 	SolicitudAsignarTecnicoModelResponse asignarTecnico(SolicitudAsignarTecnicoModelRequest request);
 }

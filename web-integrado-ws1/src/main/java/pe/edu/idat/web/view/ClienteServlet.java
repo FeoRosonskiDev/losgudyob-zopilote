@@ -105,31 +105,31 @@ public class ClienteServlet extends HttpServlet {
 		}
 
 		if (mensaje.equalsIgnoreCase("solicitudRegistro")) {
-			
+
 			Integer id_cliente = Integer.valueOf(req.getParameter(""));
 			Integer id_servicio = Integer.valueOf(req.getParameter(""));
 			Integer id_distrito = Integer.valueOf(req.getParameter(""));
 			String direccion = req.getParameter("");
-			
+
 			SolicitudRegistroModelRequest Srequest = new SolicitudRegistroModelRequest();
-			
+
 			Srequest.setIdCliente(id_cliente);
 			Srequest.setIdServicio(id_servicio);
 			Srequest.setIdDistrito(id_distrito);
 			Srequest.setDireccion(direccion);
-			
+
 			SolicitudRegistroModelResponse Sresponse = c.insertSolicitud(Srequest);
-			
+
 			req.setAttribute("mensajeRespuesta", Sresponse.getRespuesta());
 			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
-			
+
 		}
 
 		if (mensaje.equalsIgnoreCase("solicitudModificar")) {
 
 		}
 		if (mensaje.equalsIgnoreCase("solicitudEliminar")) {
-			
+
 			Integer id = Integer.valueOf(req.getParameter(""));
 
 			EliminarModelRequest Crequest = new EliminarModelRequest();
