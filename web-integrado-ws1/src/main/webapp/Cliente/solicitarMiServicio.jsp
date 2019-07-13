@@ -31,24 +31,15 @@
                                 }"
                 >
                 <input type="hidden" value="solicitudRegistro" name="metodo">
-                <label>Nombres: </label>
-                <input type="text" id="ACnombre" name="ACnombre" required="" maxlength="50" minlength="2">
-                <label>Apellido Paterno: </label>
-                <input type="text" id="ACpaterno" name="ACpaterno" required="" maxlength="50" minlength="2">
-                <label>Apellido Materno: </label>
-                <input type="text" id="ACmaterno" name="ACmaterno" required="" maxlength="50" minlength="2">
-                <label>DNI: </label>
-                <input type="text" id="ACdni" name="ACdni" required="" maxlength="8" minlength="8">
-                <label>Celular: </label>
-                <input type="phone" id="ACcelular" name="ACcelular" required="" maxlength="9" minlength="7">
-                <label>Correo Electronico: </label>
-                <input type="email" id="ACcorreo" name="ACcorreo" required="">
-                <label>Fecha de Nacimiento: </label>
-                <input type="date" id="ACfechaNacimiento" name="ACfechaNacimiento" required="">
-                <label>Nueva Contraseña: </label>
-                <input type="password" id="ACpass" name="ACpass" required="">
-                <label>Confirmar Nueva Contraseña: </label>
-                <input type="password" required="">
+                <label>ID cliente: </label>
+                <input type="text" id="SRidcliente" name="SRidcliente" required="">
+                <label>ID Servicio: </label>
+                <input type="text" id="SRidservicio" name="SRidservicio" required="">
+                <label>ID Distrito: </label>
+                <input type="text" id="SRiddistrito" name="SRiddistrito" required="">
+                 <label>Dirección: </label>
+                <input type="text" id="SRdireccion" name="SRdireccion" required="">
+               
                 <input type="submit" value="Grabar" >
                 <input type="reset" value="Limpiar" >
             </form>

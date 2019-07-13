@@ -21,7 +21,7 @@ import pe.edu.idat.web.transactional.impl.Service;
 public class ServicioServlet extends HttpServlet {
 
 	@Inject
-	private Service s;
+	private Service sv;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -47,7 +47,7 @@ public class ServicioServlet extends HttpServlet {
 			Crequest.setDescripcion(descripcion);
 			Crequest.setPrecio(precio);
 
-			ServicioRegistroModelResponse Cresponse = s.registrarservicio(Crequest);
+			ServicioRegistroModelResponse Cresponse = sv.registrarservicio(Crequest);
 
 			// -- Respuesta
 			req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
@@ -68,36 +68,22 @@ public class ServicioServlet extends HttpServlet {
 			Srequest.setDescripcion(descripcion);
 			Srequest.setPrecio(precio);
 
-			ServicioUpdateModelResponse Cresponse = s.actualizarservicio(Srequest);
+			ServicioUpdateModelResponse Cresponse = sv.actualizarservicio(Srequest);
 			req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
 			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
 		}
-
-		/*
-		 * if(mensaje.equalsIgnoreCase("eliminarServicio")) { Integer id =
-		 * Integer.valueOf(req.getParameter("ECid"));
-		 * 
-		 * EliminarModelRequest Crequest = new EliminarModelRequest();
-		 * 
-		 * Crequest.setId(id); Crequest.setEstado(2);
-		 * 
-		 * ServicioUpdateModelRequest Cresponse = s.(Crequest);
-		 * 
-		 * req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
-		 * getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp); }
-		 */
 		if (mensaje.equalsIgnoreCase("AsignarTecnico")) {
-			// Integer idSolicitud = Integer.valueOf(req.getParameter(""));
+			 Integer idSolicitud = Integer.valueOf(req.getParameter("ATidsolicitud"));
 			Integer idPersonal = Integer.valueOf(req.getParameter("ATidpersonal"));
 			String fechaasignada = req.getParameter("ATfecha");
 
 			SolicitudAsignarTecnicoModelRequest Srequest = new SolicitudAsignarTecnicoModelRequest();
 
-			Srequest.setIdSolicitud(null);
+			Srequest.setIdSolicitud(idSolicitud);
 			Srequest.setIdPersonal(idPersonal);
 			Srequest.setFechaAsignada(fechaasignada);
 
-			SolicitudAsignarTecnicoModelResponse Cresponse = s.asignarTecnico(Srequest);
+			SolicitudAsignarTecnicoModelResponse Cresponse = sv.asignarTecnico(Srequest);
 			req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
 			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
 		}

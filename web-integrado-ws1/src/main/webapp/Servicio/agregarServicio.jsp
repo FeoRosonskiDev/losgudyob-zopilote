@@ -36,7 +36,7 @@
                 <label>Descripción : </label>
                 <input type="text" id="ASdescripcion" name="ASdescripcion" required="">
                 <label>Precio: </label>
-                <input type="text" id="ASprecio" name=""ASprecio"" required="" >
+                <input type="text" id="ASprecio" name="ASprecio" required="" >
                 <input type="submit" value="Grabar" >
                 <input type="reset" value="Limpiar" >
             </form>

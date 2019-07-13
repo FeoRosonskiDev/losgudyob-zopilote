@@ -13,6 +13,7 @@ import pe.edu.idat.web.persistence.soap.service.ClienteRegistroModelRequest;
 import pe.edu.idat.web.persistence.soap.service.ClienteRegistroModelResponse;
 import pe.edu.idat.web.persistence.soap.service.ClienteUpdateModelRequest;
 import pe.edu.idat.web.persistence.soap.service.ClienteUpdateModelResponse;
+import pe.edu.idat.web.persistence.soap.service.EliminarClientResponse;
 import pe.edu.idat.web.persistence.soap.service.EliminarModelRequest;
 import pe.edu.idat.web.persistence.soap.service.SolicitudRegistroModelRequest;
 import pe.edu.idat.web.persistence.soap.service.SolicitudRegistroModelResponse;
@@ -89,27 +90,12 @@ public class ClienteServlet extends HttpServlet {
 
 		}
 
-		if (mensaje.equalsIgnoreCase("eliminarCliente")) {
-
-			Integer id = Integer.valueOf(req.getParameter("ECid"));
-
-			EliminarModelRequest Crequest = new EliminarModelRequest();
-
-			Crequest.setId(id);
-			Crequest.setEstado(2);
-
-			ClienteUpdateModelResponse Cresponse = c.clienteeliminar(Crequest);
-
-			req.setAttribute("mensajeRespuesta", Cresponse.getRespuesta());
-			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
-		}
-
 		if (mensaje.equalsIgnoreCase("solicitudRegistro")) {
 
-			Integer id_cliente = Integer.valueOf(req.getParameter(""));
-			Integer id_servicio = Integer.valueOf(req.getParameter(""));
-			Integer id_distrito = Integer.valueOf(req.getParameter(""));
-			String direccion = req.getParameter("");
+			Integer id_cliente = Integer.valueOf(req.getParameter("SRidcliente"));
+			Integer id_servicio = Integer.valueOf(req.getParameter("SRidservicio"));
+			Integer id_distrito = Integer.valueOf(req.getParameter("SRiddistrito"));
+			String direccion = req.getParameter("SRdireccion");
 
 			SolicitudRegistroModelRequest Srequest = new SolicitudRegistroModelRequest();
 
@@ -124,11 +110,7 @@ public class ClienteServlet extends HttpServlet {
 			getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
 
 		}
-
-		if (mensaje.equalsIgnoreCase("solicitudModificar")) {
-
-		}
-		if (mensaje.equalsIgnoreCase("solicitudEliminar")) {
+		if (mensaje.equalsIgnoreCase("solicitudEliminar")) { // FF
 
 			Integer id = Integer.valueOf(req.getParameter(""));
 

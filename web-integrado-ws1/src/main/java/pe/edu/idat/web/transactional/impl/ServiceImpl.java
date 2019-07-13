@@ -2,7 +2,8 @@ package pe.edu.idat.web.transactional.impl;
 
 import java.net.URL;
 
-import pe.edu.idat.web.persistence.soap.service.EliminarModelRequest;
+import javax.annotation.ManagedBean;
+
 import pe.edu.idat.web.persistence.soap.service.LosGudYobEndpointImplService;
 import pe.edu.idat.web.persistence.soap.service.ServicioRegistroModelRequest;
 import pe.edu.idat.web.persistence.soap.service.ServicioRegistroModelResponse;
@@ -11,6 +12,7 @@ import pe.edu.idat.web.persistence.soap.service.ServicioUpdateModelResponse;
 import pe.edu.idat.web.persistence.soap.service.SolicitudAsignarTecnicoModelRequest;
 import pe.edu.idat.web.persistence.soap.service.SolicitudAsignarTecnicoModelResponse;
 
+@ManagedBean
 public class ServiceImpl implements Service {
 
 	@Override

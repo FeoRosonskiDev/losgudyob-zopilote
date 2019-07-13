@@ -34,7 +34,7 @@
                 <label>Nombres: </label>
                 <input type="text" id="ACnombre" name="ACnombre" required="" maxlength="50" minlength="2">
                 <label>Apellido Paterno: </label>
-                <input type="text" id="ACpaterno" name="ACpaterno" required="" maxlength="50" minlength="2">
+                <input type="text" id="ACpaterno" name="ACpaterno" required="" maxlength="50" minlength="2"><br>
                 <label>Apellido Materno: </label>
                 <input type="text" id="ACmaterno" name="ACmaterno" required="" maxlength="50" minlength="2">
                 <label>DNI: </label>

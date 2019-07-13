@@ -53,23 +53,6 @@ public class ClienteImpl implements Cliente {
 	}
 
 	@Override
-	public ClienteUpdateModelResponse clienteeliminar(EliminarModelRequest request) {
-		try {
-
-			LosGudYobEndpointImplService cliente = new LosGudYobEndpointImplService(
-					new URL("http://localhost:8082/services/LosGudYob?wsdl"));
-
-			ClienteUpdateModelResponse response = cliente.getLosGudYobEndpointImplPort().eliminarClient(request);
-
-			return response;
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	@Override
 	public SolicitudRegistroModelResponse insertSolicitud(SolicitudRegistroModelRequest request) {
 		try {
 

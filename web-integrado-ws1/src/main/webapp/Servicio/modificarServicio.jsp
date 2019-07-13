@@ -38,7 +38,7 @@
                 <label>Descripción : </label>
                 <input type="text" id="MSdescripcion" name="MSdescripcion" required="">
                 <label>Precio: </label>
-                <input type="text" id="MSprecio" name=""ASprecio"" required="" >
+                <input type="text" id="MSprecio" name="MSprecio" required="" >
                 <input type="submit" value="Grabar" >
                 <input type="reset" value="Limpiar" >
             </form>

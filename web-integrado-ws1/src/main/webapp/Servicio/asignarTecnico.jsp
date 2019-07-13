@@ -31,6 +31,8 @@
                                 }"
                 >
                 <input type="hidden" value="AsignarTecnico" name="metodo">
+                <label>ID solicitud: </label>
+                <input type="text" id="ATidsolicitud" name="ATidsolicitud" required="">
                 <label>ID personal: </label>
                 <input type="text" id="ATidpersonal" name="ATidpersonal" required="">
                 <label>Fecha asignada: </label>

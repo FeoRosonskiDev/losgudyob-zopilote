@@ -16,7 +16,6 @@ public interface Cliente {
 
 	ClienteUpdateModelResponse clienteupdate(ClienteUpdateModelRequest request);
 
-	ClienteUpdateModelResponse clienteeliminar(EliminarModelRequest request);
 
 	// aqui irán las de la solicitud
 
