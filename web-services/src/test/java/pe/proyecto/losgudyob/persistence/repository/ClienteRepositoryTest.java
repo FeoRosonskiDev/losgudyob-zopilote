@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import pe.proyecto.losgudyob.config.BaseTest;
 import pe.proyecto.losgudyob.persistence.domain.Cliente;
+import pe.proyecto.losgudyob.view.model.listarClientesModelResponse;
 
 public class ClienteRepositoryTest extends BaseTest {
 
@@ -64,7 +65,7 @@ public class ClienteRepositoryTest extends BaseTest {
 
 	@Test
 	public void listAllClientsTest() {
-		List<Cliente> allClients = clienteRepository.listAllClients();
+		List<listarClientesModelResponse> allClients = clienteRepository.listAllClients();
 		System.out.println("Lista de clientes : " + gson.toJson(allClients));
 	}
 

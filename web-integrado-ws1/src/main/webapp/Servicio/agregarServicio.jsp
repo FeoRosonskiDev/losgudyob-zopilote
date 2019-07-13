@@ -32,11 +32,11 @@
                 >
                 <input type="hidden" value="registrarServicio" name="metodo">
                 <label>Tipo de Servicio: </label>
-                <input type="text" id="AStipo" name="AStipo" required="" maxlength="50" minlength="2">
+                <input type="text" id="AStipo" name="AStipo" required="" maxlength="50" minlength="2"><br>
                 <label>Descripción : </label>
-                <input type="text" id="ASdescripcion" name="ASdescripcion" required="">
+                <input type="text" id="ASdescripcion" name="ASdescripcion" required=""><br>
                 <label>Precio: </label>
-                <input type="text" id="ASprecio" name="ASprecio" required="" >
+                <input type="text" id="ASprecio" name="ASprecio" required="" ><br>
                 <input type="submit" value="Grabar" >
                 <input type="reset" value="Limpiar" >
             </form>

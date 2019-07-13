@@ -32,15 +32,15 @@
                 >
                 <input type="hidden" value="modificarCliente" name="metodo">
                 <label>ID: </label>
-                <input type="text" id="MCid" name="MCid" required="">
+                <input type="text" id="MCid" name="MCid" required=""><br>
                 <label>Celular: </label>
-                <input type="phone" id="MCcelular" name="MCcelular" required="" maxlength="9" minlength="7">
+                <input type="phone" id="MCcelular" name="MCcelular" required="" maxlength="9" minlength="7"><br>
                 <label>Correo Electronico: </label>
-                <input type="email" id="MCcorreo" name="MCcorreo" required="">
+                <input type="email" id="MCcorreo" name="MCcorreo" required=""><br>
                 <label>Nueva Contraseña: </label>
-                <input type="password" id="MCclave" name="MCclave" required="">
+                <input type="password" id="MCclave" name="MCclave" required=""><br>
                 <label>Confirmar Nueva Contraseña: </label>
-                <input type="password" required="">
+                <input type="password" required=""><br>
                 <input type="submit" value="Grabar" >
                 <input type="reset" value="Limpiar" >
             </form>

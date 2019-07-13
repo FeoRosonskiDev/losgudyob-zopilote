@@ -32,11 +32,11 @@
                 >
                 <input type="hidden" value="AsignarTecnico" name="metodo">
                 <label>ID solicitud: </label>
-                <input type="text" id="ATidsolicitud" name="ATidsolicitud" required="">
+                <input type="text" id="ATidsolicitud" name="ATidsolicitud" required=""><br>
                 <label>ID personal: </label>
-                <input type="text" id="ATidpersonal" name="ATidpersonal" required="">
+                <input type="text" id="ATidpersonal" name="ATidpersonal" required=""><br>
                 <label>Fecha asignada: </label>
-                <input type="date" id="ATfecha" name="ATfecha" required="">
+                <input type="date" id="ATfecha" name="ATfecha" required=""><br>
                 <input type="submit" value="Grabar" >
                 <input type="reset" value="Limpiar" >
             </form>

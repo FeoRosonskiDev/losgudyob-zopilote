@@ -32,13 +32,13 @@
                 >
                 <input type="hidden" value="solicitudRegistro" name="metodo">
                 <label>ID cliente: </label>
-                <input type="text" id="SRidcliente" name="SRidcliente" required="">
+                <input type="text" id="SRidcliente" name="SRidcliente" required=""><br>
                 <label>ID Servicio: </label>
-                <input type="text" id="SRidservicio" name="SRidservicio" required="">
+                <input type="text" id="SRidservicio" name="SRidservicio" required=""><br>
                 <label>ID Distrito: </label>
-                <input type="text" id="SRiddistrito" name="SRiddistrito" required="">
+                <input type="text" id="SRiddistrito" name="SRiddistrito" required=""><br>
                  <label>Dirección: </label>
-                <input type="text" id="SRdireccion" name="SRdireccion" required="">
+                <input type="text" id="SRdireccion" name="SRdireccion" required=""><br>
                
                 <input type="submit" value="Grabar" >
                 <input type="reset" value="Limpiar" >

@@ -1,5 +1,7 @@
 package pe.proyecto.losgudyob.transactional.service.impl;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,6 +15,7 @@ import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelRequest;
 import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelResponse;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelResponse;
+import pe.proyecto.losgudyob.view.model.listarClientesModelResponse;
 
 public class ClienteServiceImplTest extends BaseTest {
 
@@ -70,6 +73,14 @@ public class ClienteServiceImplTest extends BaseTest {
 
 		SolicitudAsignarTecnicoModelResponse response = clienteService.asignarTecnico(request);
 		System.out.println("Response asignar tecnico : " + gson.toJson(response));
+	}
+	
+	@Test
+	public void listarClientesTest() {
+		
+		List<listarClientesModelResponse> lista;
+		lista = clienteService.listAllClients();
+		System.out.println(" " + gson.toJson(lista));
 	}
 
 }

@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,7 @@ import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelRequest;
 import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelResponse;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelResponse;
+import pe.proyecto.losgudyob.view.model.listarClientesModelResponse;
 
 @Service("clienteService")
 @Transactional
@@ -374,6 +376,12 @@ public class ClienteServiceImpl implements ClienteService {
 		response.setCodigoRespuesta("01");
 		response.setRespuesta("Eliminado");
 		return response;
+	}
+
+	@Override
+	public List<listarClientesModelResponse> listAllClients() {
+		List<listarClientesModelResponse> lista= clienteRepository.listAllClients();
+		return lista;
 	}
 
 }

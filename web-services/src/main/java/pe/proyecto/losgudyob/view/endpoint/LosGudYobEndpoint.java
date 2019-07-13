@@ -1,5 +1,7 @@
 package pe.proyecto.losgudyob.view.endpoint;
 
+import java.util.List;
+
 import javax.jws.WebMethod;
 import javax.jws.WebResult;
 import javax.jws.WebService;
@@ -17,6 +19,7 @@ import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelRequest;
 import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelResponse;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelResponse;
+import pe.proyecto.losgudyob.view.model.listarClientesModelResponse;
 
 @WebService(serviceName = "LosGudYobEndpoint")
 public interface LosGudYobEndpoint {
@@ -32,6 +35,11 @@ public interface LosGudYobEndpoint {
 	@WebMethod()
 	@WebResult(name = "ClienteUpdateModelResponse")
 	public ClienteUpdateModelResponse eliminarClient(EliminarModelRequest request);
+	
+	@WebMethod()
+	@WebResult(name = "listarClientesModelResponse")
+	public List<listarClientesModelResponse> listAllClients();
+
 
 	@WebMethod()
 	@WebResult(name = "ServicioRegistroModelResponse")

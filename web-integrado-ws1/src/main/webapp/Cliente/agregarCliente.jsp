@@ -32,23 +32,23 @@
                 >
                 <input type="hidden" value="registrarCliente" name="metodo">
                 <label>Nombres: </label>
-                <input type="text" id="ACnombre" name="ACnombre" required="" maxlength="50" minlength="2">
+                <input type="text" id="ACnombre" name="ACnombre" required="" maxlength="50" minlength="2"><br>
                 <label>Apellido Paterno: </label>
                 <input type="text" id="ACpaterno" name="ACpaterno" required="" maxlength="50" minlength="2"><br>
                 <label>Apellido Materno: </label>
-                <input type="text" id="ACmaterno" name="ACmaterno" required="" maxlength="50" minlength="2">
+                <input type="text" id="ACmaterno" name="ACmaterno" required="" maxlength="50" minlength="2"><br>
                 <label>DNI: </label>
-                <input type="text" id="ACdni" name="ACdni" required="" maxlength="8" minlength="8">
+                <input type="text" id="ACdni" name="ACdni" required="" maxlength="8" minlength="8"><br><br>
                 <label>Celular: </label>
-                <input type="phone" id="ACcelular" name="ACcelular" required="" maxlength="9" minlength="7">
+                <input type="phone" id="ACcelular" name="ACcelular" required="" maxlength="9" minlength="7"><br>
                 <label>Correo Electronico: </label>
-                <input type="email" id="ACcorreo" name="ACcorreo" required="">
+                <input type="email" id="ACcorreo" name="ACcorreo" required=""><br>
                 <label>Fecha de Nacimiento: </label>
-                <input type="date" id="ACfechaNacimiento" name="ACfechaNacimiento" required="">
+                <input type="date" id="ACfechaNacimiento" name="ACfechaNacimiento" required=""><br>
                 <label>Nueva Contraseña: </label>
-                <input type="password" id="ACpass" name="ACpass" required="">
+                <input type="password" id="ACpass" name="ACpass" required=""><br>
                 <label>Confirmar Nueva Contraseña: </label>
-                <input type="password" required="">
+                <input type="password" required=""><br>
                 <input type="submit" value="Grabar" >
                 <input type="reset" value="Limpiar" >
             </form>

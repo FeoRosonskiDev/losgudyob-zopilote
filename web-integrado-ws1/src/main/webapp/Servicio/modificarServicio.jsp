@@ -32,13 +32,13 @@
                 >
                 <input type="hidden" value="modificarServicio" name="metodo">
                 <label>ID: </label>
-                <input type="text" id="MSid" name="MSid" required="">
+                <input type="text" id="MSid" name="MSid" required=""><br>
                 <label>Tipo de Servicio: </label>
-                <input type="text" id="MStipo" name="MStipo" required="">
+                <input type="text" id="MStipo" name="MStipo" required=""><br>
                 <label>Descripción : </label>
-                <input type="text" id="MSdescripcion" name="MSdescripcion" required="">
+                <input type="text" id="MSdescripcion" name="MSdescripcion" required=""><br>
                 <label>Precio: </label>
-                <input type="text" id="MSprecio" name="MSprecio" required="" >
+                <input type="text" id="MSprecio" name="MSprecio" required="" ><br>
                 <input type="submit" value="Grabar" >
                 <input type="reset" value="Limpiar" >
             </form>

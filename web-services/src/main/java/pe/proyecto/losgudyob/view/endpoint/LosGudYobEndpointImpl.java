@@ -1,5 +1,7 @@
 package pe.proyecto.losgudyob.view.endpoint;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +20,7 @@ import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelRequest;
 import pe.proyecto.losgudyob.view.model.SolicitudAsignarTecnicoModelResponse;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelRequest;
 import pe.proyecto.losgudyob.view.model.SolicitudRegistroModelResponse;
+import pe.proyecto.losgudyob.view.model.listarClientesModelResponse;
 
 @Component
 public class LosGudYobEndpointImpl implements LosGudYobEndpoint {
@@ -66,6 +69,11 @@ public class LosGudYobEndpointImpl implements LosGudYobEndpoint {
 	@Override
 	public SolicitudAsignarTecnicoModelResponse asignarTecnico(SolicitudAsignarTecnicoModelRequest request) {
 		return clienteService.asignarTecnico(request);
+	}
+
+	@Override
+	public List<listarClientesModelResponse> listAllClients() {
+		return clienteService.listAllClients();
 	}
 
 }

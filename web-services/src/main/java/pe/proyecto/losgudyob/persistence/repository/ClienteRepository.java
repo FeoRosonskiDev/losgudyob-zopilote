@@ -10,18 +10,20 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import pe.proyecto.losgudyob.persistence.domain.Cliente;
+import pe.proyecto.losgudyob.view.model.listarClientesModelResponse;
 
 public interface ClienteRepository {
 	// LISTAR TODOS LOS CLIENTES
 	@Select("select * from clientes")
-	@Results(value = { @Result(column = "id", property = "id"), @Result(column = "nombre", property = "nombre"),
+	@Results(value = { //@Result(column = "id", property = "id"),
+			@Result(column = "nombre", property = "nombre"),
 			@Result(column = "apellido_paterno", property = "apellidoPaterno"),
 			@Result(column = "apellido_materno", property = "apellidoMaterno"),
 			@Result(column = "dni", property = "dni"), @Result(column = "celular", property = "celular"),
 			@Result(column = "correo", property = "correo"),
-			@Result(column = "fecha_nacimiento", property = "fechaNacimiento"),
-			@Result(column = "clave", property = "clave"), @Result(column = "estado", property = "estado") })
-	public List<Cliente> listAllClients();
+			@Result(column = "fecha_nacimiento", property = "fechaNacimiento") })
+			//@Result(column = "clave", property = "clave"), @Result(column = "estado", property = "estado") })
+	public List<listarClientesModelResponse> listAllClients();
 
 	// INSERTAR UN CLIENTE
 	@Insert("insert into clientes (nombre, apellido_paterno, apellido_materno, dni, celular, correo, fecha_nacimiento, clave, estado) "
